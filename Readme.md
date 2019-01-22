@@ -1,8 +1,8 @@
 # Личный проект «Техномарт»
 
 * Студент: [Andrei Asipchuk](https://up.htmlacademy.ru/htmlcss/24/user/897455).
-* Наставник: `Неизвестно`.
-
+* Наставник: [Влад Кривокора]
+(https://htmlacademy.ru/profile/krivokora).
 ---
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
