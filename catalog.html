@@ -48,7 +48,59 @@
       </ul>
       <section class="filtres">
         <h2 class="visually-hidden">Фильтр товаров</h2>
-        <!--Здесь будет форма-->
+        <form class="filtres-form" method="get" action="https://echo.htmlacademy.ru">
+          <label for="price">Цена:</label>
+          <input type="range" name="price" id="price" min="0" max="30000" step="100">
+          <fieldset>
+             <legend>Производители:</legend>
+             <ul>
+               <li class="filter-option">
+                 <input class="filter-input filter-input-checkbox" type="checkbox" name="bosh" id="filter-bosh" checked>
+                 <label for="filter-bosh">BOSH</label>
+               </li>
+               <li class="filter-option">
+                  <input class="filter-input filter-input-checkbox" type="checkbox" name="interskol" id="filter-interskol">
+                  <label for="filter-interskol">ИНТЕРСКОЛ</label>
+                </li>
+                <li class="filter-option">
+                  <input class="filter-input filter-input-checkbox" type="checkbox" name="makita" id="filter-makita" checked>
+                  <label for="filter-makita">MAKITA</label>
+                </li>
+                <li class="filter-option">
+                  <input class="filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="filter-dewalt">
+                  <label for="filter-dewalt">DEWALT</label>
+                </li>
+                <li class="filter-option">
+                  <input class="filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="filter-hitachi">
+                  <label for="filter-hitachi">HITACHI</label>
+                </li>
+             </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Питание:</legend>
+            <ul>
+              <li class="filter-option">
+                <input class="filter-input filter-input-radio" type="radio" name="supply system" value="battery" id="filter-battery" checked>
+                <label for="filter-battery">Аккумуляторные</label>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-radio" type="radio" name="supply system" value="network" id="filter-network">
+                <label for="filter-network">Сетевые</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit" class="filter-button button">Показать</button>
+        </form>
+      </section>
+      <!--сортировка по цене и типу, хз как она делается, наверное так-->
+      <section class="sorting">
+        <h2 class="visually-hidden">Сортировка:</h2>
+        <span>Сортировка:</span>
+        <button class="sorting-button" type="button">По цене</button>
+        <button class="sorting-button" type="button">По типу</button>
+        <button class="sorting-button" type="button">По функционалу</button>
+        <button class="visually-hidden" type="button">Сортировака по возростанию</button>
+        <button class="visually-hidden" type="button">Сортировака по убыванию</button>
       </section>
       <section class="catalog">
         <h2 class="visually-hidden">Каталог товаров</h2>
@@ -163,9 +215,10 @@
       </div>
     </footer>
 
+    <!--модальное окно - добавление товара в корзину-->
     <section class="modal modal-basket">
       <h2>Личный кабинет</h2>
-      <span class="modal-close">x</span>
+      <button class="modal-close" type="button">Закрыть</button>
       <div class="modal-button">
         <a class="button" href="">Оформить заказ</a>
         <a class="button" href="">Продолжить покупки</a>

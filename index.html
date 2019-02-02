@@ -7,7 +7,12 @@
   <body>
     <header class="main-header">
       <a class="header-logo" href="#">Техномарт</a>
-      <span class="search">Поиск</span> <!--форма для поиска-->
+      <span class="search">Поиск</span>
+      <!--форма для поиска-->
+      <form action="https://echo.htmlacademy.ru" class="search">
+        <label class="visually-hidden" for="search-form">Поиск по сайту</label>
+        <input type="search" name="search" id="search-form" placeholder="Поиск:">
+      </form>
       <a class="service-button" href="#">Закладки:<span>0</span></a>
       <a class="service-button" href="#">Корзина:<span>0</span></a>
       <a class="button-order-link">Оформить заказ</a>
@@ -59,6 +64,7 @@
             <a href="delivery.html">Бесплатно</a>
           </li>
         </ul>
+        <!--слайдер-->
         <ul class="promotions-slider">   <!--изображение в слайдере не контентное-->
           <li class="promotions-slider-item"> <!--добавится бэкграундом в css-->
             <a href="catalog.html">Открыть каталог</a>
@@ -178,7 +184,7 @@
       <section class="main-contacts">
         <h2>Контакты</h2>
         <p>Вы можете забрать товар сами, заехав к нам в офис:</p>
-        <a href=""><img class="contacts-map" src="img/map.png" alt="Карта" width="300px" height="158px"></a>
+        <a href="#"><img class="contacts-map" src="img/map.png" alt="Карта" width="300px" height="158px"></a>
         <p>
           <a class="button" href="#">Заблудились? Напишите нам!</a> <!--переход на сервис карт-->
         </p>
@@ -211,9 +217,9 @@
       <p class="copyrighting">© 2010–2019 Компания «Техномарт» Все права защищены</p>
       <div class="footer-social">
         <ul class="social">
-          <li><a class="social-button" href="#">Вконтакте</a></li>
-          <li><a class="social-button" href="#">Фейсбук</a></li>
-          <li><a class="social-button" href="#">Инстаграм</a></li>
+            <li><a class="social-button" href="#">Вконтакте</a></li>
+            <li><a class="social-button" href="#">Фейсбук</a></li>
+            <li><a class="social-button" href="#">Инстаграм</a></li>
         </ul>
         <p>
           <span>Обратная связь</span>
@@ -225,5 +231,30 @@
         </p>
       </div>
     </footer>
+
+    <!--модальное окно - карта-->
+    <section class="modal-map">
+        <img src="img/map-modal.png" alt="Развернутая карта местонахождения нашего интернет-магазина">
+        <button class="modal-close" type="button">Закрыть</button>
+    </section>
+    <!--модальное окно - поле для обратной связи-->
+    <section class="modal-writeus">
+        <form class="writeus-form" action="https://echo.htmlacademy.ru" method="post">
+            <p>
+              <label for="user-name">Ваше имя:</label>
+              <input type="text" name="name" id="user-name" placeholder="Имя Фамилия">
+            </p>
+            <p>
+              <label for="user-email">Ваш e-mail:</label>
+              <input type="text" name="email" id="user-email" placeholder="email@example.com">
+            </p>
+            <p>
+              <label for="text-letter">Текст письма:</label>
+              <textarea name="writeus-text" id="text-letter" rows="5" placeholder="В свободной форме"></textarea>
+            </p>
+            <button class="button" type="submit">Отправить</button>
+        </form>
+        <button class="modal-close" type="button">Закрыть</button>
+    </section>
   </body>
 </html>
