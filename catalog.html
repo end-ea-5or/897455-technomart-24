@@ -56,23 +56,23 @@
              <ul>
                <li class="filter-option">
                  <input class="filter-input filter-input-checkbox" type="checkbox" name="bosh" id="filter-bosh" checked>
-                 <label for="filter-bosh">BOSH</label>
+                 <label for="filter-bosh">bosh</label>
                </li>
                <li class="filter-option">
                   <input class="filter-input filter-input-checkbox" type="checkbox" name="interskol" id="filter-interskol">
-                  <label for="filter-interskol">ИНТЕРСКОЛ</label>
+                  <label for="filter-interskol">интерскол</label>
                 </li>
                 <li class="filter-option">
                   <input class="filter-input filter-input-checkbox" type="checkbox" name="makita" id="filter-makita" checked>
-                  <label for="filter-makita">MAKITA</label>
+                  <label for="filter-makita">makita</label>
                 </li>
                 <li class="filter-option">
                   <input class="filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="filter-dewalt">
-                  <label for="filter-dewalt">DEWALT</label>
+                  <label for="filter-dewalt">dewalt</label>
                 </li>
                 <li class="filter-option">
                   <input class="filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="filter-hitachi">
-                  <label for="filter-hitachi">HITACHI</label>
+                  <label for="filter-hitachi">hitachi</label>
                 </li>
              </ul>
           </fieldset>
@@ -93,15 +93,29 @@
         </form>
       </section>
       <!--сортировка по цене и типу, хз как она делается, наверное так-->
-      <section class="sorting">
-        <h2 class="visually-hidden">Сортировка:</h2>
+      <div class="sorting">
         <span>Сортировка:</span>
-        <button class="sorting-button" type="button">По цене</button>
-        <button class="sorting-button" type="button">По типу</button>
-        <button class="sorting-button" type="button">По функционалу</button>
-        <button class="visually-hidden" type="button">Сортировака по возростанию</button>
-        <button class="visually-hidden" type="button">Сортировака по убыванию</button>
-      </section>
+        <ul>
+          <li class="sorting-options">
+            <a class="sorting-button" href="#">По цене</a>
+          </li>
+          <li class="sorting-options">
+            <a class="sorting-button" href="#">По типу</a>
+          </li>
+          <li class="sorting-options">
+            <a class="sorting-button" href="#">По функционалу</a>
+          </li>
+        </ul>
+        <ul>
+          <li class="sorting-options">
+            <a class="visually-hidden" href="#">Сортировака по возростанию</a>
+          </li>
+          <li class="sorting-options">
+            <a class="visually-hidden" href="#">Сортировака по убыванию</a>
+          </li>
+        </ul>
+      </div>
+
       <section class="catalog">
         <h2 class="visually-hidden">Каталог товаров</h2>
         <ul class="catalog-list">

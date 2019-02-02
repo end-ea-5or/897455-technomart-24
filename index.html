@@ -7,7 +7,6 @@
   <body>
     <header class="main-header">
       <a class="header-logo" href="#">Техномарт</a>
-      <span class="search">Поиск</span>
       <!--форма для поиска-->
       <form action="https://echo.htmlacademy.ru" class="search">
         <label class="visually-hidden" for="search-form">Поиск по сайту</label>
@@ -234,27 +233,29 @@
 
     <!--модальное окно - карта-->
     <section class="modal-map">
-        <img src="img/map-modal.png" alt="Развернутая карта местонахождения нашего интернет-магазина">
-        <button class="modal-close" type="button">Закрыть</button>
+      <h2 class="visually-hidden">Как найти нащ интернет-магазин</h2>
+      <img src="img/map-modal.png" alt="Развернутая карта местонахождения нашего интернет-магазина">
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
     <!--модальное окно - поле для обратной связи-->
     <section class="modal-writeus">
-        <form class="writeus-form" action="https://echo.htmlacademy.ru" method="post">
-            <p>
-              <label for="user-name">Ваше имя:</label>
-              <input type="text" name="name" id="user-name" placeholder="Имя Фамилия">
-            </p>
-            <p>
-              <label for="user-email">Ваш e-mail:</label>
-              <input type="text" name="email" id="user-email" placeholder="email@example.com">
-            </p>
-            <p>
-              <label for="text-letter">Текст письма:</label>
-              <textarea name="writeus-text" id="text-letter" rows="5" placeholder="В свободной форме"></textarea>
-            </p>
-            <button class="button" type="submit">Отправить</button>
-        </form>
-        <button class="modal-close" type="button">Закрыть</button>
+      <h2 class="visually-hidden">Форма обратной связи с нами</h2>
+      <form class="writeus-form" action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="user-name">Ваше имя:</label>
+          <input type="text" name="name" id="user-name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="user-email">Ваш e-mail:</label>
+          <input type="text" name="email" id="user-email" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="text-letter">Текст письма:</label>
+          <textarea name="writeus-text" id="text-letter" rows="5" placeholder="В свободной форме"></textarea>
+        </p>
+        <button class="button" type="submit">Отправить</button>
+      </form>
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
   </body>
 </html>
