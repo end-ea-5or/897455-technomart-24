@@ -10,10 +10,27 @@ ins {
   text-decoration: none;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 /*====================== visually-hidden ================================*/
 .visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px;
+  position: absolute;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -21,8 +38,9 @@ ins {
 
 /*====================== хэдер =========================================*/
 .main-header {
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   background-color: #f3f7f9;
+  padding-bottom: 65px;
 }
 
 .main-header a {
@@ -35,33 +53,33 @@ ins {
   background-color: #293449;
 }
 
-.header-logo {
-  padding: 13px 55px 16px 55px;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 220px;
-  height: 47px;
-  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
-  background-color: #ee3643;
+.header-top .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.header-logo:hover,
-.footer-logo:hover {
-  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
-  background-color: #ca2c37;
+.search {
+  margin-right: auto;
+  width: 90px;
 }
 
-.header-logo:active,
-.footer-logo:active {
-  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
-  background-color: #ba2732;
+input[type="search"] {
+  padding: 12px;
+  background-color: #293449;
+  border: none;
 }
 
 .service-button {
+  width: 150px;
+  height: 42px;
+  text-align: center;
+  line-height: 2.3;
   background-color: #293449;
 }
 
-.service-button:hover {
+.service-button:hover,
+input[type="search"]:hover {
   background-color: #212a3a;
 }
 
@@ -70,10 +88,36 @@ ins {
   opacity: 0.6;
 }
 
+input[type="search"]:focus {
+  background-color: #ffffff;
+}
+
+.header-logo {
+  padding: 13px 55px 16px 55px;
+  width: 220px;
+  height: 42px;
+  box-shadow: 0 5px 0 #b52933;
+  background-color: #ee3643;
+}
+
+
+.header-logo:hover,
+.footer-logo:hover {
+  box-shadow: 0 5px 0 #9a212a;
+  background-color: #ca2c37;
+}
+
+.header-logo:active,
+.footer-logo:active {
+  box-shadow: 0 5px 0 #8e1e26;
+  background-color: #ba2732;
+}
+
 .button-order-link {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 14px 22px 13px 20px;
+  width: 150px;
+  height: 42px;
+  text-align: center;
+  line-height: 2.3;
   background-color: #63a63e;
 }
 
@@ -86,43 +130,64 @@ ins {
   opacity: 0.5;
 }
 
+.header{
+  display: flex;
+  justify-content: space-between;
+  min-height: 160px;
+  padding-top: 47px;
+}
+
 .header-info {
+  margin: 0;
+  margin-left: 50px;
   width: 196px;
   height: 60px;
   color: #ee3643;
   font-size: 16px;
   font-style: italic;
+  font-weight: normal;
   line-height: 23px;
 }
 
+.shop-contacts {
+  margin-left: 70px;
+}
+
 .shop-contacts a {
-  width: 144px;
-  height: 21px;
+  display: block;
+  padding-left: 70px;
+  width: 270px;
+  height: 45px;
   color: #ee3643;
+  border: 3px solid #ffffff;
   font-size: 21px;
-  line-height: 21px;
+  line-height: 2;
 }
 
 .shop-contacts address {
+  margin-top: 5px;
   height: 13px;
   color: #32425c;
   font-size: 14px;
   line-height: 24px;
   font-style: normal;
-  border: 3px solid #ffffff;
 }
 
 .user-navigation,
 .site-navigation,
+.logged-navigation,
 .promotions ul {
+  margin: 0;
   list-style: none;
 }
 
 .user-navigation li {
-  display: inline-block;
+  margin-left: 10px;
+  height: 45px;
   background-color: #ffffff;
   font-size: 21px;
-  line-height: 21px;
+  text-align: center;
+  line-height: 2;
 }
 
 .user-navigation a {
@@ -137,6 +202,11 @@ ins {
   background-color: #32425c;
   box-shadow: inset 0 -5px 0 #293449;
 }
+
+.site-navigation {
+  display: flex;
+ }
+
 
 .user-navigation a:hover {
   color: #ee3643;
@@ -156,14 +226,44 @@ ins {
 }
 
 /*====================== main ============================================*/
+.promotions {
+  margin: 60px 0;
+}
+
+.flex-promotions {
+  display: flex;
+}
+
+.flex-two {
+  flex-direction: column;
+}
+
+.promotions-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.promotions-list li:last-child {
+  margin-bottom: 0;
+}
+
 .promotions-items {
   width: 300px;
   height: 123px;
-  font-family: "Cuprum", Tahoma, sans-serif;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   font-size: 24px;
   line-height: 30px;
   color: #ffffff;
 }
+
+.flex-two .promotions-items {
+  margin-right: 0;
+}
+
 
 .promotions-items a {
   color: #ffffff;
@@ -179,6 +279,12 @@ ins {
 
 .promotions-items a:active {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.promotions-slider-item {
+  width: 620px;
+  min-height: 266px;
+  background-color: red;
 }
 
 .materials {
@@ -210,11 +316,20 @@ ins {
 
 /* популярные товары и производители*/
 .populars-headline {
-  font-family: "Cuprum", Tahoma, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 89px;
+  padding-right: 24px;
+  margin-bottom: 20px;
+
+  font-family: "Cuprum", "Tahoma", sans-serif;
   background-color: #f9f5f0;
 }
 
 .populars-headline h2 {
+  margin: 0;
+  margin-left: 30px;
   color: #32425c;
   font-size: 30px;
   font-weight: normal;
@@ -223,7 +338,7 @@ ins {
 }
 
 .button {
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   color: #ffffff;
   font-size: 14px;
   line-height: 18px;
@@ -245,7 +360,7 @@ ins {
   height: 38px;
   box-shadow: inset 0 -3px 0 #367315;
   background-color: #63a63e;
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   border: none;
   color: #ffffff;
   font-size: 14px;
@@ -260,7 +375,7 @@ ins {
   height: 38px;
   border: 3px solid #63a63e;
   background-color: #ffffff;
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   color: #32425c;
   font-size: 14px;
   font-weight: 400;
@@ -275,16 +390,29 @@ ins {
 
 .popular-items-list,
 .populars-brands-list {
-  font-family: "PT Sans", Tahoma, sans-serif;
+  padding: 0;
+  margin-bottom: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   list-style: none;
   background-color: #ffffff;
 }
 
+.populars-brands-list {
+  margin-bottom: 85px;
+}
+
 .popular-items-products {
+  margin-right: 20px;
   width: 220px;
   height: 318px;
   border: 1px solid #eaeaea;
   background-color: #ffffff;
+}
+
+.popular-items-products:last-child {
+  margin-right: 0;
 }
 
 .popular-items-products h3,
@@ -318,10 +446,20 @@ ins {
 }
 
 .populars-brands-one {
+  margin-right: 20px;
+  margin-bottom: 20px;
   width: 220px;
   height: 145px;
   border: 1px solid #eaeaea;
   background-color: #ffffff;
+}
+
+.populars-brands-one:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+.populars-brands-one:nth-of-type(n+4) {
+  margin-bottom: 0;
 }
 
 .populars-brands-one:hover {
@@ -335,7 +473,9 @@ ins {
 
 /*сервисы*/
 .services {
-  font-family: "PT Sans", Tahoma, sans-serif;
+  padding-top: 60px;
+  padding-bottom: 75px;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   background-color: #f4f8fa;
 }
 
@@ -343,9 +483,9 @@ ins {
 .services h2,
 .main-info h2,
 .main-contacts h2,
-.catalog-headline h2,
-.about-perforators h2  {
-  font-family: "Cuprum", Tahoma, sans-serif;
+.catalog-headline {
+  margin: 0;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   color: #000000;
   font-size: 30px;
   font-weight: 400;
@@ -355,19 +495,27 @@ ins {
 
 .services p,
 .about-perforators p {
-  width: 398px;
-  height: 96px;
+  margin: 0;
+  padding: 0;
+  /*height: 96px;*/
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 13px;
   font-weight: 400;
+  line-height: 30px;
 }
 
 /* main-info */
+.contacts-flex {
+  padding-top: 75px;
+  padding-bottom: 86px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .main-info p,
 .main-contacts p {
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   color: #000000;
   font-size: 13px;
   font-weight: 400;
@@ -381,18 +529,19 @@ ins {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-weight: 400;
   line-height: 24px;
 }
 
 /*====================== футер ==========================================*/
 .main-footer {
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   background-color: #32425c;
 }
 
 .footer-logo {
+  margin-right: 80px;
   padding: 20px 41px 25px 41px;
   display: inline-block;
   box-sizing: border-box;
@@ -402,8 +551,20 @@ ins {
   background-color: #ee3643;
 }
 
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 55px;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer-navigation-list,
 .footer-links {
+  margin: 0;
   list-style: none;
   font-size: 18px;
   font-weight: 400;
@@ -459,6 +620,9 @@ ins {
 }
 
 .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #293449;
 }
 
@@ -489,29 +653,50 @@ ins {
   color: #ffd180;
 }
 
+.developers a:hover {
+  text-decoration: underline;
+}
+
+.developers a:active {
+  color: #ee3643;
+}
+
 /*====================== КАТАЛОГ =================================================*/
 /*====================== хэдер ===================================================*/
 .service-button.current-full {
   background-color: #ee3643;
 }
 
+.user-logged {
+  margin: 0;
+  margin-left: 51px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.logged-navigation {
+  display: flex;
+}
+
 a.logged-name {
-  width: 299px;
+  padding-left: 47px;
+  padding-right: 70px;
   height: 45px;
   background-color: #ffffff;
   text-align: center;
   vertical-align: middle;
   color: #000000;
   text-decoration: none;
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   font-size: 21px;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 2.1;
 }
 a.my-order,
 a.my-office {
   color: #32425c;
-  font-family: "Cuprum", Tahoma, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -534,11 +719,16 @@ a.my-office {
 /*====================== main ====================================================*/
 .breadcrumbs {
   list-style: none;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-left: 50px;
 }
 
 .breadcrumbs a{
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -548,7 +738,27 @@ a.my-office {
 .catalog-headline {
   width: 940px;
   height: 89px;
+  color: #32425c;
   background-color: #f2f6f8;
+  margin-bottom: 20px;
+  padding-top: 32px;
+  padding-left: 30px;
+}
+
+.sorting-flex,
+.catalog-flex,
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filtres {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.sorting-flex {
+  width: 700px;
 }
 
 .filtres fieldset {
@@ -559,7 +769,7 @@ a.my-office {
 .filtres legend,
 .filtres-form > label {
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 17px;
   font-weight: 700;
   line-height: 30px;
@@ -569,12 +779,14 @@ a.my-office {
 .filters-list,
 .catalog-list,
 .sorting-list {
+  margin: o;
+  padding: 0;
   list-style: none;
 }
 
 .filters-list li {
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
@@ -585,7 +797,7 @@ a.my-office {
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -595,7 +807,7 @@ a.my-office {
 .sorting span {
   background-color: #f7f3ec;
   color: #000000;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -604,7 +816,7 @@ a.my-office {
 
 .sorting-button {
   color: rgba(0, 0, 0, 0.3);;
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -627,20 +839,35 @@ a.my-office {
 }
 
 .catalog {
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
+}
+
+.catalog-list {
+  margin-bottom: 52px;
 }
 
 .catalog-item {
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
+
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
+}
+
 
 .pagination-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 60px;
+
 }
 
 .pagination-item a {
-  font-family: "PT Sans", Tahoma, sans-serif;
+  font-family: "PT Sans", "Tahoma", sans-serif;
   color: #000000;
   background-color: #ffffff;
   font-size: 13px;
@@ -663,7 +890,20 @@ a.my-office {
 }
 
 .about-perforators {
+  padding-top: 67px;
+  padding-bottom: 73px;
   background-color: #f2f6f8;
+}
+
+.about-perforators h2 {
+  margin: 0;
+  padding-bottom: 40px;
+  font-family: "Cuprum", "Tahoma", sans-serif;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
 }
 
 .filter-input:disabled + label {
